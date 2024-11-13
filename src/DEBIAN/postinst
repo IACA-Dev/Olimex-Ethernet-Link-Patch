@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -e
+
+SERVICE_NAME=olimex-ethernet-link-patch
+
+systemctl daemon-reload
+systemctl enable $SERVICE_NAME
+systemctl start $SERVICE_NAME
+
+echo "Service started and enabled."
+
+exit 0
