@@ -13,6 +13,10 @@ memtool mw 0x01c20164 0x00000426
 
 This patch set up a service in systemd to run this update at boot (register update is not persistent).
 
+## 🎁 Download pre-build
+
+Go on [latest release](https://github.com/IACA-Dev/Olimex-Ethernet-Link-Patch/releases/latest) and download `patch.deb` file. 
+
 ##  🛠️ Build
 
 ```bash
