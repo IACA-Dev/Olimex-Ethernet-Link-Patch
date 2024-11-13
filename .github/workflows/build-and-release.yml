@@ -33,7 +33,7 @@ jobs:
       - name: Download built package
         uses: actions/download-artifact@v3
         with:
-          name: patch.gz.deb
+          name: patch.deb
 
       - name: Create Release
         id: create_release
