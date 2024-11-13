@@ -1,0 +1,16 @@
+#!/bin/bash
+
+
+if [ "$(id -u)" -ne 0 ]; then
+    echo "This script must be run as root."
+    exit 1
+fi
+
+memtool mw 0x01c20164 0x00000426 
+
+if [ $? -ne 0 ]; then
+    echo "Error to configure CPU register."
+    exit 10
+fi
+
+exit 0

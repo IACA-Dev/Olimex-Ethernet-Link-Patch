@@ -1,0 +1,11 @@
+[Unit]
+Before=basic.target
+After=local-fs.target
+Description=Olimex Ethernet Link Patch
+
+[Service]
+ExecStart=/usr/bin/olimex-el-patch
+RemainAfterExit=true
+
+[Install]
+WantedBy=default.target

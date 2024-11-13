@@ -1,0 +1,25 @@
+#!/bin/bash
+
+function print_supported_board {
+  echo -e "Supported board : \n\t - Olimex Lime 2 (sun7i A20)"
+}
+
+BOARD_INFOS_FILE=/proc/device-tree/compatible
+
+if [ ! -f "$BOARD_INFOS_FILE" ]; then
+  echo "Error : Host is not compatible for the patch (/proc/device-tree/compatible not found)."
+  print_supported_board
+  exit 10
+fi
+
+BOARD_INFOS=$(cat "$BOARD_INFOS_FILE" | tr '\0' '\n')
+
+if echo "$BOARD_INFOS" | grep -q "sun7i-a20"; then
+  echo "Board is compatible for patch."
+else
+  echo "Error : Host is not compatible for the patch (sun7i-a20 compatibility not found)."
+  print_supported_board
+  exit 11
+fi
+
+exit 0
