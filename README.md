@@ -13,9 +13,17 @@ memtool mw 0x01c20164 0x00000426
 
 This patch set up a service in systemd to run this update at boot (register update is not persistent).
 
-## Usage
+##  🛠️ Build
 
-..
+```bash
+dpkg-deb -Z gzip --build src patch.gz.deb
+```
+
+## ⏬ Install on target
+
+```bash
+dpkg -i patch.gz.deb
+```
 
 ## 🧑‍🤝‍🧑 Contributors
 
